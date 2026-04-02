@@ -6,7 +6,9 @@ import CommandPieChart from '../components/CommandPieChart';
 import RankingTable from '../components/RankingTable';
 
 // Conexão com o servidor
-const socket = io('http://163.176.188.165:3000'); 
+const socket = io("https://api.bostossauro.runage.tech", {
+  transports: ["websocket", "polling"]
+});
 
 export default function Dashboard() {
   const [data, setData] = useState<any>(null);
