@@ -69,6 +69,12 @@ export default function Layout() {
         )}
       </AnimatePresence>
 
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px] animate-blob" />
+    <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] animate-blob animation-delay-2000" />
+    <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px] animate-blob animation-delay-4000" />
+    </div>
+
       <main className="flex-1 min-w-0 h-screen overflow-y-auto">
         <div className="p-6 md:p-12 w-full max-w-7xl mx-auto">
           <Outlet /> 
