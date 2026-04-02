@@ -47,7 +47,7 @@ export default function CommandPieChart({ commandsData, totalCommands }: any) {
               dataKey="value"
               stroke="none"
             >
-              {data.map((entry, index) => {
+              {data.map((_, index) => {
                 const color = COLORS[index % COLORS.length];
                 return (
                   <Cell 
