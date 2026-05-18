@@ -8,6 +8,7 @@ import Abismo from './pages/Abismo';
 import Auth from './pages/Auth';
 import { type ReactNode } from 'react'; 
 
+// O Protetor agora embrulha apenas a página interna que quisermos
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { isAuthenticated, loading } = useAuth();
 
@@ -28,12 +29,22 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Auth />} />
-          <Route index element={<Dashboard />} />
-          <Route path="docs" element={<Docs />} />
-          <Route path="comandos" element={<Commands />} />
 
-          <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
-            <Route path="abismo" element={<Abismo />} />
+          <Route path="/" element={<Layout />}>
+            
+            <Route index element={<Dashboard />} />
+            <Route path="docs" element={<Docs />} />
+            <Route path="comandos" element={<Commands />} />
+
+            <Route 
+              path="abismo" 
+              element={
+                <ProtectedRoute>
+                  <Abismo />
+                </ProtectedRoute>
+              } 
+            />
+            
           </Route>
         </Routes>
       </BrowserRouter>
