@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Pickaxe, Shield, HeartPulse } from 'lucide-react';
 
 export default function Abismo() {
-  const [camada, setCamada] = useState(1);
-  const [risco, setRisco] = useState(10.0);
-  const [hpPicareta, setHpPicareta] = useState(24);
-  const [maxHp, setMaxHp] = useState(24);
+  const [camada] = useState(1);
+  const [risco] = useState(10.0);
+  const [hpPicareta] = useState(24);
+  const [maxHp] = useState(24);
 
   return (
     <div className="w-full flex flex-col gap-6">
@@ -17,7 +17,7 @@ export default function Abismo() {
             <Pickaxe size={32} className="text-orange-500" />
             O Abismo
           </h1>
-          <p className="text-gray-400 mt-1">Mineração profunda da BostoCorp.</p>
+          <p className="text-gray-400 mt-1">Mineração profunda da BostoCorp. Camada atual: {camada}</p>
         </div>
 
         {/* STATUS */}
@@ -40,8 +40,9 @@ export default function Abismo() {
         {/* Visão de Camadas */}
         <div className="lg:col-span-1 bg-gray-950 border border-gray-800 rounded-2xl p-6 shadow-xl relative overflow-hidden">
            <h2 className="text-lg font-bold text-gray-100 mb-4 border-b border-gray-800 pb-2">Geologia</h2>
-           <div className="h-64 flex items-center justify-center text-gray-500 border-2 border-dashed border-gray-800 rounded-xl">
-             [ COMPONENTE CavernaGrid ]
+           <div className="h-64 flex flex-col items-center justify-center text-gray-500 border-2 border-dashed border-gray-800 rounded-xl">
+             <span>[ COMPONENTE CavernaGrid ]</span>
+             <span className="text-xs mt-2 text-orange-400">Risco Base: {risco}%</span>
            </div>
         </div>
 
