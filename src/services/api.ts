@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3000/api', 
+  baseURL: 'https://bostossauro.runage.tech/api', 
   withCredentials: true, 
 });
 
@@ -15,7 +15,7 @@ api.interceptors.response.use(
 
       try {
         const { data } = await axios.post(
-          'http://localhost:3000/api/auth/refresh',
+          'https://bostossauro.runage.tech/api/auth/refresh',
           {},
           { withCredentials: true }
         );
