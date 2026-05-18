@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, LayoutDashboard, BookOpen, TerminalSquare, Pickaxe } from 'lucide-react';
+import { Menu, X, LayoutDashboard, BookOpen, TerminalSquare, Pickaxe, LogIn } from 'lucide-react';
 
 export default function Layout() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const rotas = [
+    { name: 'Login', path: '/login', icon: <LogIn size={20} /> },
     { name: 'Dashboard', path: '/', icon: <LayoutDashboard size={20} /> },
     { name: 'O Abismo', path: '/abismo', icon: <Pickaxe size={20} /> },
     { name: 'Documentação', path: '/docs', icon: <BookOpen size={20} /> },
