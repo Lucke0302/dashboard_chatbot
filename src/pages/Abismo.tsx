@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Pickaxe, Shield, HeartPulse } from 'lucide-react';
 
 export default function Abismo() {
+    
   const [camada] = useState(1);
   const [risco] = useState(10.0);
   const [hpPicareta] = useState(24);
